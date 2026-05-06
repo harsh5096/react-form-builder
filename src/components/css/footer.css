@@ -1,0 +1,155 @@
+/* ===== Modern Agency-Style Footer ===== */
+.footer-agency {
+  width: 100%;
+  background: #fff;
+  border-top: 1.5px solid #e6f9f0;
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+}
+
+.footer-agency-main {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-agency-copyright {
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: 600;
+  text-align: center;
+}
+
+.footer-agency-socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-agency-socials a {
+  color: #19c37d;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-agency-socials a:hover {
+  color: #13a76b;
+  transform: translateY(-3px);
+  background: rgba(25, 195, 125, 0.1);
+}
+
+.footer-agency-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1rem;
+  color: #888;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-link {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+}
+
+.footer-link:hover {
+  color: #19c37d;
+  background: rgba(25, 195, 125, 0.1);
+}
+
+.footer-link-divider {
+  color: #bbb;
+  font-size: 1.1rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .footer-agency {
+    padding: 2rem 1rem 1rem 1rem;
+    gap: 1.2rem;
+  }
+  
+  .footer-agency-main {
+    gap: 0.8rem;
+  }
+  
+  .footer-agency-copyright {
+    font-size: 1rem;
+  }
+  
+  .footer-agency-socials {
+    gap: 1.2rem;
+  }
+  
+  .footer-agency-socials a {
+    font-size: 1.6rem;
+  }
+  
+  .footer-agency-links {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-agency {
+    padding: 1.5rem 1rem 1rem 1rem;
+    gap: 1rem;
+  }
+  
+  .footer-agency-copyright {
+    font-size: 0.95rem;
+  }
+  
+  .footer-agency-socials {
+    gap: 1rem;
+  }
+  
+  .footer-agency-socials a {
+    font-size: 1.4rem;
+    padding: 0.4rem;
+  }
+  
+  .footer-agency-links {
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer-link {
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-agency {
+    padding: 1.2rem 0.8rem 0.8rem 0.8rem;
+  }
+  
+  .footer-agency-copyright {
+    font-size: 0.9rem;
+  }
+  
+  .footer-agency-socials a {
+    font-size: 1.3rem;
+  }
+  
+  .footer-agency-links {
+    font-size: 0.85rem;
+  }
+}

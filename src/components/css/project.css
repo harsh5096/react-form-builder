@@ -1,0 +1,186 @@
+/* ===== Modern Agency-Style Projects Section ===== */
+.projects-agency {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(30,60,114,0.07);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-agency-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 3rem;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+}
+
+.highlight-green {
+  color: #19c37d;
+}
+
+.projects-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #f7f9fa;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(30,60,114,0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(30,60,114,0.12);
+}
+
+.project-content {
+  flex: 1;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: #19c37d;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .projects-agency {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-agency {
+    padding: 2rem 1rem;
+    border-radius: 16px;
+  }
+  
+  .projects-agency-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    padding: 1.5rem;
+    min-height: 250px;
+  }
+  
+  .project-title {
+    font-size: 1.3rem;
+  }
+  
+  .project-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-agency {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .projects-agency-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-card {
+    padding: 1.2rem;
+    min-height: 220px;
+    border-radius: 12px;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-tech {
+    margin-bottom: 1rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .projects-agency {
+    padding: 1rem 0.8rem;
+  }
+  
+  .projects-agency-title {
+    font-size: 1.6rem;
+  }
+  
+  .project-card {
+    padding: 1rem;
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+  }
+  
+  .project-description {
+    font-size: 0.85rem;
+  }
+}

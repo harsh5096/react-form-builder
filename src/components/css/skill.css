@@ -1,0 +1,201 @@
+/* ===== Modern Agency-Style Grouped Skills Section ===== */
+.skills-agency {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(30,60,114,0.07);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-agency-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 3rem;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+}
+
+.highlight-green {
+  color: #19c37d;
+}
+
+.skills-groups {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-group {
+  width: 100%;
+  background: #f7f9fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(30,60,114,0.06);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.skill-group-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #19c37d;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+}
+
+.skill-group-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(30,60,114,0.08);
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+.skill-mini-card:hover {
+  box-shadow: 0 4px 16px rgba(25,195,125,0.15);
+  transform: translateY(-3px);
+}
+
+.skill-mini-icon {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.skill-mini-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .skills-agency {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .skills-groups {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-agency {
+    padding: 2rem 1rem;
+    border-radius: 16px;
+  }
+  
+  .skills-agency-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-groups {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .skill-group {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+  
+  .skill-group-title {
+    font-size: 1.2rem;
+  }
+  
+  .skill-group-list {
+    gap: 0.8rem;
+  }
+  
+  .skill-mini-card {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .skill-mini-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-agency {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .skills-agency-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .skill-group {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .skill-group-title {
+    font-size: 1.1rem;
+  }
+  
+  .skill-group-list {
+    gap: 0.6rem;
+  }
+  
+  .skill-mini-card {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+  
+  .skill-mini-icon {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .skills-agency {
+    padding: 1rem 0.8rem;
+  }
+  
+  .skills-agency-title {
+    font-size: 1.6rem;
+  }
+  
+  .skill-group {
+    padding: 0.8rem;
+  }
+  
+  .skill-mini-card {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}
+
+
+

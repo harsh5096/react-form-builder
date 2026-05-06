@@ -1,0 +1,28 @@
+.error{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.error-heading {
+    margin: 44px;
+    color: aliceblue;
+    font-size: 34px;
+}
+.error-btn{
+    padding-right: 23px;
+    font-weight: 500;
+  
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    padding-left: 23px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 3px;
+    font-weight: 300px;
+    
+}
+
+.error-btn:hover{background-color:yellowgreen}
