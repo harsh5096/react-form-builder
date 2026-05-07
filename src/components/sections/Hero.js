@@ -1,102 +1,74 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { personal } from '../../data/content';
-import Button from '../ui/Button';
 
 export default function Hero() {
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 px-6 md:px-10 overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute inset-0 bg-grid opacity-60" />
-      <div className="absolute top-1/4 -left-32 w-[28rem] h-[28rem] rounded-full bg-indigo-300/30 dark:bg-indigo-500/20 blur-3xl animate-blob" />
-      <div className="absolute bottom-0 -right-32 w-[32rem] h-[32rem] rounded-full bg-fuchsia-300/30 dark:bg-fuchsia-500/20 blur-3xl animate-blob" style={{ animationDelay: '4s' }} />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[var(--bg)] to-transparent" />
+    <section
+      id="home"
+      className="relative pt-28 pb-16 px-4 md:px-10 overflow-hidden"
+      style={{ background: 'linear-gradient(135deg,#dcebe9 0%,#eaf4f2 60%,#f5faf9 100%)' }}
+    >
+      {/* Decorative circles */}
+      <div className="absolute top-24 left-10 w-16 h-16 rounded-full border-2 border-white/70" />
+      <div className="absolute bottom-16 left-24 w-10 h-10 rounded-full bg-white/50" />
+      <div className="absolute top-10 right-1/3 text-[10rem] font-black text-white/30 select-none pointer-events-none hidden md:block">
+        H
+      </div>
 
-      <div className="relative max-w-6xl mx-auto w-full grid md:grid-cols-12 gap-12 items-center">
-        <div className="md:col-span-7">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--surface)]/70 backdrop-blur text-xs font-medium mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            Available for new opportunities
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.1 }}
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.95] tracking-tight"
-          >
-            Crafting
-            <br />
-            <span className="bg-gradient-accent bg-clip-text text-transparent">digital products</span>
-            <br />
-            with code & care.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-8 text-lg md:text-xl text-[var(--text-muted)] max-w-xl leading-relaxed"
-          >
-            {personal.shortBio}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
-            className="mt-10 flex flex-wrap gap-4"
-          >
-            <Button onClick={() => go('projects')} variant="primary">
-              View Work <FaArrowRight />
-            </Button>
-            <Button onClick={() => go('contact')} variant="ghost">
-              <FaEnvelope /> Get in touch
-            </Button>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-12 flex items-center gap-5 text-[var(--text-muted)]"
-          >
-            <a href={personal.socials.github} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors text-xl"><FaGithub /></a>
-            <a href={personal.socials.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors text-xl"><FaLinkedin /></a>
-            <a href={personal.socials.email} className="hover:text-accent transition-colors text-xl"><FaEnvelope /></a>
-            <span className="h-px w-12 bg-[var(--border)]" />
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
-          </motion.div>
-        </div>
-
+      <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        {/* LEFT */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="md:col-span-5 relative"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="z-10"
         >
-          <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-[var(--border)] shadow-soft bg-[var(--muted)]">
+          <h1 className="font-display text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+            Hello, I'm <span className="text-teal-700">{personal.name}</span>
+          </h1>
+          <h2 className="mt-3 text-xl md:text-2xl font-semibold text-teal-700">
+            {personal.role}
+          </h2>
+          <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-md">
+            {personal.shortBio}
+          </p>
+          <div className="mt-6 flex gap-3 flex-wrap">
+            <button
+              onClick={() => go('about')}
+              className="px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded border-2 border-teal-700 text-teal-700 hover:bg-teal-700 hover:text-white transition-colors"
+            >
+              Learn More
+            </button>
+            <button
+              onClick={() => go('contact')}
+              className="px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded bg-teal-700 text-white hover:bg-teal-800 transition-colors"
+            >
+              Contact Us
+            </button>
+          </div>
+        </motion.div>
+
+        {/* RIGHT */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="relative flex justify-center items-end"
+        >
+          <div className="relative w-[280px] h-[340px] md:w-[360px] md:h-[440px]">
+            <div className="absolute inset-0 rounded-full bg-white/60 blur-sm" />
+            <div className="absolute inset-3 rounded-full border-2 border-white/80" />
             <img
               src={personal.avatar}
               alt={personal.name}
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
-              className="w-full h-full object-cover"
+              className="relative w-full h-full object-cover object-top"
+              style={{ clipPath: 'inset(0 0 0 0 round 0)' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 p-5 rounded-2xl bg-white/80 dark:bg-black/50 backdrop-blur-xl border border-white/40 dark:border-white/10">
-              <div className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Currently</div>
-              <div className="font-semibold mt-1">Full Stack @ Bitquark</div>
-            </div>
           </div>
-          <div className="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-gradient-accent shadow-glow rotate-12 hidden md:block" />
         </motion.div>
       </div>
     </section>
