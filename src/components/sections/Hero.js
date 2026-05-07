@@ -1,77 +1,108 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaArrowRight, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { personal } from '../../data/content';
+
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+};
 
 export default function Hero() {
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section
-      id="home"
-      className="relative pt-28 pb-16 px-4 md:px-10 overflow-hidden"
-      style={{ background: 'linear-gradient(135deg,#dcebe9 0%,#eaf4f2 60%,#f5faf9 100%)' }}
-    >
-      {/* Decorative circles */}
-      <div className="absolute top-24 left-10 w-16 h-16 rounded-full border-2 border-white/70" />
-      <div className="absolute bottom-16 left-24 w-10 h-10 rounded-full bg-white/50" />
-      <div className="absolute top-10 right-1/3 text-[10rem] font-black text-white/30 select-none pointer-events-none hidden md:block">
-        H
+    <section id="home" className="relative min-h-[92vh] flex items-center pt-28 pb-16 px-5 md:px-8 overflow-hidden bg-gradient-soft">
+      {/* Animated background blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-24 w-72 h-72 rounded-full bg-teal-200/40 blur-3xl animate-blob" />
+        <div className="absolute bottom-1/4 -right-24 w-80 h-80 rounded-full bg-violet-200/30 blur-3xl animate-blob" style={{ animationDelay: '4s' }} />
+        <div className="absolute inset-0 bg-grid opacity-40" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="relative max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-8 items-center"
+      >
         {/* LEFT */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="z-10"
-        >
-          <h1 className="font-display text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
-            Hello, I'm <span className="text-teal-700">{personal.name}</span>
-          </h1>
-          <h2 className="mt-3 text-xl md:text-2xl font-semibold text-teal-700">
-            {personal.role}
-          </h2>
-          <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-md">
+        <div className="z-10">
+          <motion.span
+            variants={item}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border)] bg-white/70 backdrop-blur text-[11px] font-medium tracking-wide text-[var(--text-muted)] mb-6"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            Available for opportunities
+          </motion.span>
+
+          <motion.h1
+            variants={item}
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-[var(--text)]"
+          >
+            Hi, I'm <span className="bg-gradient-accent bg-clip-text text-transparent">{personal.name.split(' ')[0]}</span>.
+            <br />
+            <span className="text-[var(--text-muted)] font-medium">A {personal.role.split('·')[0].trim().toLowerCase()}.</span>
+          </motion.h1>
+
+          <motion.p
+            variants={item}
+            className="mt-5 text-sm md:text-base text-[var(--text-muted)] leading-relaxed max-w-md"
+          >
             {personal.shortBio}
-          </p>
-          <div className="mt-6 flex gap-3 flex-wrap">
+          </motion.p>
+
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
             <button
-              onClick={() => go('about')}
-              className="px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded border-2 border-teal-700 text-teal-700 hover:bg-teal-700 hover:text-white transition-colors"
+              onClick={() => go('projects')}
+              className="group inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--text)] text-[var(--bg)] text-sm font-medium hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-card"
             >
-              Learn More
+              View my work
+              <FaArrowRight className="text-xs transition-transform group-hover:translate-x-0.5" />
             </button>
             <button
               onClick={() => go('contact')}
-              className="px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded bg-teal-700 text-white hover:bg-teal-800 transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--text)] hover:border-accent hover:text-accent transition-colors"
             >
-              Contact Us
+              Get in touch
             </button>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* RIGHT */}
+          <motion.div variants={item} className="mt-8 flex items-center gap-4 text-[var(--text-muted)]">
+            <a href={personal.socials.github} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors"><FaGithub /></a>
+            <a href={personal.socials.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors"><FaLinkedin /></a>
+            <span className="text-xs">{personal.location}</span>
+          </motion.div>
+        </div>
+
+        {/* RIGHT — Avatar */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="relative flex justify-center items-end"
+          variants={item}
+          className="relative flex justify-center md:justify-end"
         >
-          <div className="relative w-[260px] h-[260px] md:w-[380px] md:h-[380px]">
-            <div className="absolute -inset-4 rounded-full bg-white/50 blur-md" />
-            <div className="absolute inset-0 rounded-full border-[6px] border-white shadow-2xl overflow-hidden bg-teal-50">
-              <img
-                src={personal.avatar}
-                alt={personal.name}
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                className="w-full h-full object-cover object-top"
-              />
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+            className="relative w-[240px] h-[240px] md:w-[340px] md:h-[340px]"
+          >
+            <div className="absolute -inset-6 rounded-full bg-gradient-accent opacity-20 blur-2xl" />
+            <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-accent shadow-glow">
+              <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                <img
+                  src={personal.avatar}
+                  alt={personal.name}
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
             </div>
-            <div className="absolute -inset-2 rounded-full border border-white/60 pointer-events-none" />
-          </div>
+          </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
