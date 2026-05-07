@@ -33,7 +33,7 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-::selection { background: #6366F1; color: #fff; }
+::selection { background: #0F766E; color: #fff; }
 
 /* Subtle grid bg */
 .bg-grid {
