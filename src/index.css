@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #FAFAFA;
+  --bg: #FBFBFC;
   --surface: #FFFFFF;
-  --muted: #F4F4F5;
-  --text: #0A0A0A;
-  --text-muted: #52525B;
-  --border: #E4E4E7;
+  --muted: #F5F6F7;
+  --text: #0F172A;
+  --text-muted: #64748B;
+  --border: #E5E7EB;
+  --accent: #0D9488;
+  --accent-soft: #ECFDF5;
 }
 
 .dark {
@@ -20,6 +22,8 @@
   --text: #FAFAFA;
   --text-muted: #A1A1AA;
   --border: #27272A;
+  --accent: #14B8A6;
+  --accent-soft: rgba(20,184,166,0.08);
 }
 
 html { scroll-behavior: smooth; }
@@ -29,30 +33,36 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: 'cv11','ss01','ss03';
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-::selection { background: #0F766E; color: #fff; }
+::selection { background: var(--accent); color: #fff; }
 
-/* Subtle grid bg */
 .bg-grid {
-  background-image: linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-image: linear-gradient(to right, rgba(15,23,42,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15,23,42,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 .dark .bg-grid {
   background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
 }
 
-/* Animated blob */
 @keyframes blob {
   0%,100% { transform: translate(0,0) scale(1); }
   33% { transform: translate(30px,-40px) scale(1.1); }
   66% { transform: translate(-20px,20px) scale(0.95); }
 }
-.animate-blob { animation: blob 14s ease-in-out infinite; }
+.animate-blob { animation: blob 18s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
