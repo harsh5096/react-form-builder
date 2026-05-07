@@ -58,16 +58,17 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="relative flex justify-center items-end"
         >
-          <div className="relative w-[280px] h-[340px] md:w-[360px] md:h-[440px]">
-            <div className="absolute inset-0 rounded-full bg-white/60 blur-sm" />
-            <div className="absolute inset-3 rounded-full border-2 border-white/80" />
-            <img
-              src={personal.avatar}
-              alt={personal.name}
-              onError={(e) => { e.currentTarget.style.display = 'none'; }}
-              className="relative w-full h-full object-cover object-top"
-              style={{ clipPath: 'inset(0 0 0 0 round 0)' }}
-            />
+          <div className="relative w-[260px] h-[260px] md:w-[380px] md:h-[380px]">
+            <div className="absolute -inset-4 rounded-full bg-white/50 blur-md" />
+            <div className="absolute inset-0 rounded-full border-[6px] border-white shadow-2xl overflow-hidden bg-teal-50">
+              <img
+                src={personal.avatar}
+                alt={personal.name}
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div className="absolute -inset-2 rounded-full border border-white/60 pointer-events-none" />
           </div>
         </motion.div>
       </div>
