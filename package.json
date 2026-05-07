@@ -15,8 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "dev": "react-scripts start",
+    "start": "HOST=0.0.0.0 PORT=8080 react-scripts start",
+    "dev": "HOST=0.0.0.0 PORT=8080 react-scripts start",
     "build": "react-scripts build && rm -rf dist && cp -r build dist",
     "build:dev": "react-scripts build && rm -rf dist && cp -r build dist",
     "test": "react-scripts test",
