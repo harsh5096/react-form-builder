@@ -91,7 +91,7 @@ export default function Hero() {
           >
             <div className="absolute -inset-6 rounded-full bg-gradient-accent opacity-20 blur-2xl" />
             <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-accent shadow-glow">
-              <div className="w-full h-full rounded-full overflow-hidden bg-white">
+              <div className="w-full h-full rounded-full overflow-hidden bg-[var(--surface)]">
                 <img
                   src={personal.avatar}
                   alt={personal.name}
