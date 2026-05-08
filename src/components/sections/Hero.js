@@ -16,7 +16,7 @@ export default function Hero() {
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="home" className="relative min-h-[92vh] flex items-center pt-28 pb-16 px-5 md:px-8 overflow-hidden bg-[var(--bg)] bg-gradient-soft dark:bg-none">
+    <section id="home" className="relative min-h-[80vh] flex items-center pt-20 pb-10 px-4 md:px-6 overflow-hidden bg-[var(--bg)] bg-gradient-soft dark:bg-none">
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-24 w-72 h-72 rounded-full bg-teal-200/40 dark:bg-teal-500/10 blur-3xl animate-blob" />
