@@ -38,12 +38,17 @@ export default function Projects() {
               </div>
               <h3 className="font-display text-lg md:text-xl font-semibold mb-2 leading-tight">{p.title}</h3>
               <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-5">{p.description}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {p.tech.map((t) => (
                   <span key={t} className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-[var(--muted)] text-[var(--text-muted)] border border-[var(--border)]">
                     {t}
                   </span>
                 ))}
+              </div>
+              <div className="overflow-hidden h-0 group-hover:h-7 transition-all duration-300">
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-accent translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                  View Project <FaArrowUpRightFromSquare className="text-[10px]" />
+                </span>
               </div>
             </div>
           </motion.article>
