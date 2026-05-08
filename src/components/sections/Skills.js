@@ -12,43 +12,42 @@ export default function Skills() {
       subtitle="A curated stack honed across full-stack engineering and AI/ML projects."
       className="bg-[var(--muted)]/40"
     >
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
         {skills.map((g, i) => (
           <motion.div
             key={g.group}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: i * 0.06 }}
-            whileHover={{ y: -4 }}
-            className="group relative p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-accent/40 hover:shadow-card transition-all overflow-hidden"
+            transition={{ duration: 0.5, delay: i * 0.05 }}
+            className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 group"
           >
-            <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-[0.04] transition-opacity" />
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-7 h-7 rounded-lg bg-gradient-accent flex items-center justify-center text-white text-[10px] font-semibold">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h3 className="font-display font-semibold text-base">{g.group}</h3>
-              </div>
-              <motion.div
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                variants={{ show: { transition: { staggerChildren: 0.04 } } }}
-                className="flex flex-wrap gap-2"
-              >
-                {g.items.map((it) => (
-                  <motion.span
-                    key={it}
-                    variants={{ hidden: { opacity: 0, y: 6 }, show: { opacity: 1, y: 0 } }}
-                    className="px-2.5 py-1 rounded-full text-[11px] font-medium border border-[var(--border)] bg-[var(--bg)] hover:border-accent hover:text-accent transition-colors cursor-default"
-                  >
-                    {it}
-                  </motion.span>
-                ))}
-              </motion.div>
+            <div className="md:col-span-4 flex items-center gap-3">
+              <span className="text-[11px] font-mono text-accent tracking-widest">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3 className="font-display text-lg md:text-xl font-medium tracking-tight text-[var(--text)] group-hover:text-accent transition-colors">
+                {g.group}
+              </h3>
             </div>
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{ show: { transition: { staggerChildren: 0.03 } } }}
+              className="md:col-span-8 flex flex-wrap gap-x-6 gap-y-2 items-center"
+            >
+              {g.items.map((it) => (
+                <motion.span
+                  key={it}
+                  variants={{ hidden: { opacity: 0, y: 6 }, show: { opacity: 1, y: 0 } }}
+                  className="text-sm md:text-[15px] text-[var(--text-muted)] hover:text-accent transition-colors cursor-default relative
+                  after:content-[''] after:absolute after:-right-3 after:top-1/2 after:w-1 after:h-1 after:rounded-full after:bg-[var(--border)] last:after:hidden"
+                >
+                  {it}
+                </motion.span>
+              ))}
+            </motion.div>
           </motion.div>
         ))}
       </div>
