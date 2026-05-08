@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="z-10">
           <motion.span
             variants={item}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border)] bg-white/70 backdrop-blur text-[11px] font-medium tracking-wide text-[var(--text-muted)] mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)]/70 backdrop-blur text-[11px] font-medium tracking-wide text-[var(--text-muted)] mb-6"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Available for opportunities
