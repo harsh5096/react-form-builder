@@ -16,11 +16,11 @@ export default function Hero() {
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="home" className="relative min-h-[92vh] flex items-center pt-28 pb-16 px-5 md:px-8 overflow-hidden bg-gradient-soft">
+    <section id="home" className="relative min-h-[92vh] flex items-center pt-28 pb-16 px-5 md:px-8 overflow-hidden bg-[var(--bg)] bg-gradient-soft dark:bg-none">
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-24 w-72 h-72 rounded-full bg-teal-200/40 blur-3xl animate-blob" />
-        <div className="absolute bottom-1/4 -right-24 w-80 h-80 rounded-full bg-violet-200/30 blur-3xl animate-blob" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-1/4 -left-24 w-72 h-72 rounded-full bg-teal-200/40 dark:bg-teal-500/10 blur-3xl animate-blob" />
+        <div className="absolute bottom-1/4 -right-24 w-80 h-80 rounded-full bg-violet-200/30 dark:bg-violet-500/10 blur-3xl animate-blob" style={{ animationDelay: '4s' }} />
         <div className="absolute inset-0 bg-grid opacity-40" />
       </div>
 
@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="z-10">
           <motion.span
             variants={item}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border)] bg-white/70 backdrop-blur text-[11px] font-medium tracking-wide text-[var(--text-muted)] mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)]/70 backdrop-blur text-[11px] font-medium tracking-wide text-[var(--text-muted)] mb-6"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Available for opportunities
@@ -91,7 +91,7 @@ export default function Hero() {
           >
             <div className="absolute -inset-6 rounded-full bg-gradient-accent opacity-20 blur-2xl" />
             <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-accent shadow-glow">
-              <div className="w-full h-full rounded-full overflow-hidden bg-white">
+              <div className="w-full h-full rounded-full overflow-hidden bg-[var(--surface)]">
                 <img
                   src={personal.avatar}
                   alt={personal.name}
