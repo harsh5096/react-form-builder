@@ -2,17 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #FBFBFC;
-  --surface: #FFFFFF;
-  --muted: #F5F6F7;
+  --bg: #FFFFFF;
+  --surface: #F8FAFC;
+  --muted: #F1F5F9;
   --text: #0F172A;
   --text-muted: #64748B;
-  --border: #E5E7EB;
+  --border: #E2E8F0;
   --accent: #0D9488;
-  --accent-soft: #ECFDF5;
+  --accent-soft: rgba(13,148,136,0.1);
+  --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 .dark {
@@ -32,12 +35,17 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-feature-settings: 'cv11','ss01','ss03';
-  letter-spacing: -0.01em;
+  font-family: var(--font-body);
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }
 
 ::selection { background: var(--accent); color: #fff; }

@@ -8,7 +8,7 @@
 }
 
 body, html {
-  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #1a1a1a;
   line-height: 1.6;

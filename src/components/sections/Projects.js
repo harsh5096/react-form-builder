@@ -14,14 +14,17 @@ export default function Projects() {
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((p, i) => (
-          <motion.article
+          <motion.a
             key={p.title}
+            href={p.link || '#'}
+            target={p.link ? "_blank" : "_self"}
+            rel="noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: (i % 3) * 0.06 }}
             whileHover={{ y: -4 }}
-            className="group relative overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 hover:shadow-card hover:border-accent/40 transition-all"
+            className={`group relative overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 hover:shadow-card hover:border-accent/40 transition-all ${!p.link ? 'cursor-default' : 'cursor-pointer'}`}
           >
             <div className={`absolute -top-16 -right-16 w-40 h-40 rounded-full bg-gradient-to-br ${p.accent} opacity-10 group-hover:opacity-25 blur-2xl transition-opacity`} />
             <div className="relative">
@@ -29,12 +32,14 @@ export default function Projects() {
                 <span className="text-[10px] font-mono text-[var(--text-muted)] tracking-wider">
                   {String(i + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
                 </span>
-                <motion.span
-                  whileHover={{ rotate: 45 }}
-                  className={`w-7 h-7 rounded-full bg-gradient-to-br ${p.accent} flex items-center justify-center text-white text-[10px] opacity-0 group-hover:opacity-100 transition-opacity`}
-                >
-                  <FaArrowUpRightFromSquare />
-                </motion.span>
+                {p.link && (
+                  <motion.span
+                    whileHover={{ rotate: 45 }}
+                    className={`w-7 h-7 rounded-full bg-gradient-to-br ${p.accent} flex items-center justify-center text-white text-[10px] opacity-0 group-hover:opacity-100 transition-opacity`}
+                  >
+                    <FaArrowUpRightFromSquare />
+                  </motion.span>
+                )}
               </div>
               <h3 className="font-display text-base font-semibold mb-1.5 leading-tight">{p.title}</h3>
               <p className="text-xs text-[var(--text-muted)] leading-relaxed mb-3">{p.description}</p>
@@ -45,13 +50,15 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="overflow-hidden h-0 group-hover:h-6 transition-all duration-300">
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-accent translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
-                  View Project <FaArrowUpRightFromSquare className="text-[9px]" />
-                </span>
-              </div>
+              {p.link && (
+                <div className="overflow-hidden h-0 group-hover:h-6 transition-all duration-300">
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-accent translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                    View Project <FaArrowUpRightFromSquare className="text-[9px]" />
+                  </span>
+                </div>
+              )}
             </div>
-          </motion.article>
+          </motion.a>
         ))}
       </div>
     </Section>

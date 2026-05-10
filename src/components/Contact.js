@@ -14,7 +14,7 @@ function Contact() {
         <div className="contact-agency-details">
           <div className="contact-detail"><b>Email:</b> harshjoshijh3382565@gmail.com</div>
           <div className="contact-detail"><b>Phone:</b> +91 9548215889</div>
-          <div className="contact-detail"><b>Location:</b> Uttarakhand, India</div>
+          <div className="contact-detail"><b>Location:</b> Noida, India</div>
           <div className="contact-detail"><b>LinkedIn:</b> linkedin.com/in/harsh-joshi-467796253</div>
           <div className="contact-detail"><b>GitHub:</b> github.com/harsh5096</div>
         </div>
@@ -39,7 +39,7 @@ export default Contact;
 
 
 
-        
+
 
 
 

@@ -1,8 +1,7 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Uchen', serif;
 }
 .about-container {
     margin: 59px;
@@ -112,7 +111,6 @@
   font-weight: 800;
   color: #222;
   margin: 0 0 1rem 0;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 
 .highlight-green {
@@ -124,6 +122,40 @@
   color: #444;
   margin-bottom: 1rem;
   line-height: 1.8;
+  text-align: left;
+}
+
+.about-agency-intro p {
+  margin-bottom: 1.2rem;
+}
+
+.extra-content {
+  display: block;
+}
+
+.about-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.read-more-btn {
+  display: none; /* Desktop always show full text */
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #19c37d;
+  font-weight: 700;
+  border: 1px solid #19c37d;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: rgba(25, 195, 125, 0.05);
 }
 
 .about-agency-cv-btn {
@@ -188,6 +220,24 @@
   
   .about-agency-intro {
     font-size: 1.1rem;
+  }
+
+  .collapsed .extra-content {
+    display: none;
+  }
+
+  .read-more-btn {
+    display: flex; /* Show on mobile */
+  }
+
+  .about-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-agency-cv-btn, .read-more-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Section({ id, eyebrow, title, subtitle, children, className = '' }) {
   return (
-    <section id={id} className={`relative py-12 md:py-16 px-4 md:px-6 ${className}`}>
+    <section id={id} className={`relative py-8 md:py-12 px-4 md:px-6 ${className}`}>
       <div className="max-w-6xl mx-auto">
         {(eyebrow || title) && (
           <motion.div
@@ -11,7 +11,7 @@ export default function Section({ id, eyebrow, title, subtitle, children, classN
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-8 md:mb-10 max-w-2xl"
+            className="mb-6 md:mb-8 max-w-2xl"
           >
             {eyebrow && (
               <span className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.18em] uppercase text-accent mb-4">

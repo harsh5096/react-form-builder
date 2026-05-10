@@ -30,8 +30,32 @@ export default function Hero() {
         animate="show"
         className="relative max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-8 items-center"
       >
-        {/* LEFT */}
-        <div className="z-10">
+        {/* RIGHT — Avatar (Shown on top in mobile) */}
+        <motion.div
+          variants={item}
+          className="relative flex justify-center md:justify-end order-1 md:order-2"
+        >
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+            className="relative w-[240px] h-[240px] md:w-[340px] md:h-[340px]"
+          >
+            <div className="absolute -inset-6 rounded-full bg-gradient-accent opacity-20 blur-2xl" />
+            <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-accent shadow-glow">
+              <div className="w-full h-full rounded-full overflow-hidden bg-[var(--surface)]">
+                <img
+                  src={personal.avatar}
+                  alt={personal.name}
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* LEFT — Text Content */}
+        <div className="z-10 order-2 md:order-1">
           <motion.span
             variants={item}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)]/70 backdrop-blur text-[11px] font-medium tracking-wide text-[var(--text-muted)] mb-6"
@@ -46,7 +70,9 @@ export default function Hero() {
           >
             Hi, I'm <span className="bg-gradient-accent bg-clip-text text-transparent">{personal.name.split(' ')[0]}</span>.
             <br />
-            <span className="text-[var(--text-muted)] font-medium">A {personal.role.split('·')[0].trim().toLowerCase()}.</span>
+            <span className="text-2xl md:text-3xl lg:text-4xl text-[var(--text-muted)] font-medium mt-2 block leading-tight">
+              {personal.role}
+            </span>
           </motion.h1>
 
           <motion.p
@@ -79,29 +105,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — Avatar */}
-        <motion.div
-          variants={item}
-          className="relative flex justify-center md:justify-end"
-        >
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="relative w-[240px] h-[240px] md:w-[340px] md:h-[340px]"
-          >
-            <div className="absolute -inset-6 rounded-full bg-gradient-accent opacity-20 blur-2xl" />
-            <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-accent shadow-glow">
-              <div className="w-full h-full rounded-full overflow-hidden bg-[var(--surface)]">
-                <img
-                  src={personal.avatar}
-                  alt={personal.name}
-                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   );

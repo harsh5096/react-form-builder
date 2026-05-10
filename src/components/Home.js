@@ -34,7 +34,7 @@ const Home = () => {
               <span className="highlight-gradient">Full Stack</span> Developer with <span className="highlight-gradient">AI/ML</span> Expertise
             </h1>
             <p className="hero-intro">
-              I'm Harsh Joshi, a passionate Full Stack Developer currently working at Bitquark Technologies. I specialize in MERN stack development and have experience in AI/ML applications. Let's build something amazing together!
+              I'm Harsh Joshi, a passionate Full Stack Developer currently working at Morpheme Webnexus Pvt. Ltd. I specialize in MERN stack development, AI automation, and cloud deployment. Let's build something amazing together!
             </p>
             <div className="hero-buttons">
               <button className="btn-primary" onClick={scrollToContact}>

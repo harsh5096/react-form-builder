@@ -1,13 +1,13 @@
 export const personal = {
   name: 'Harsh Joshi',
-  role: 'Full Stack Developer · AI/ML',
+  role: 'Full Stack Engineer with AI Integration Expertise',
   shortBio:
-    "I'm Harsh Joshi, a Full Stack Developer at Bitquark Technologies specializing in MERN stack and AI-powered applications.",
+    "Building scalable MERN stack applications, AI-powered automation systems, and cloud-based solutions with a focus on performance, user experience, and real-world impact.",
   longBio:
-    "I'm a passionate Full Stack Developer currently working at Bitquark Technologies. I completed my Master in Computer Applications (AI/ML) from Uttaranchal University with a 7.96 CGPA. My expertise lies in MERN stack development, real-time applications, and AI-powered solutions. I've solved 250+ DSA problems on LeetCode and GeeksforGeeks and love turning ideas into reality.",
+    "I’m a passionate Full Stack Developer with hands-on experience building scalable web applications, AI-powered solutions, and automation systems. Currently working at Morpheme Webnexus Pvt. Ltd., I specialize in MERN stack development, backend optimization, WhatsApp automation, and cloud deployment using AWS.\n\nWith a strong foundation in Data Structures & Algorithms (250+ problems solved) and an MCA in AI/ML, I enjoy combining software engineering with modern AI technologies like RAG, LangChain, Vector Databases, and Generative AI. I’ve worked on impactful projects ranging from real-time disease prediction systems using CNNs to AI-powered news platforms and enterprise POS/social media management systems.\n\nI focus on building fast, reliable, and user-friendly products while continuously learning new technologies to solve real-world problems efficiently.",
   email: 'harshjoshijh3382565@gmail.com',
   phone: '+91 9548215889',
-  location: 'Uttarakhand, India',
+  location: 'Noida, India',
   socials: {
     github: 'https://github.com/harsh5096',
     linkedin: 'https://linkedin.com/in/harsh-joshi-467796253',
@@ -18,11 +18,13 @@ export const personal = {
 };
 
 export const skills = [
-  { group: 'Languages', items: ['C', 'C++', 'Python', 'JavaScript', 'TypeScript', 'PHP', 'SQL'] },
-  { group: 'Frontend', items: ['React.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap'] },
-  { group: 'Backend', items: ['Node.js', 'Express.js', 'FastAPI'] },
-  { group: 'Databases', items: ['MongoDB', 'MySQL', 'Firebase'] },
-  { group: 'AI / Tools', items: ['CNN', 'Git', 'GitHub', 'Postman', 'GitHub Copilot', 'Cursor'] },
+  { group: 'Programming Languages', items: ['C', 'C++', 'Python', 'SQL', 'TypeScript', 'JavaScript'] },
+  { group: 'Front-End Technologies', items: ['Tailwind CSS', 'React.js', 'Next.js'] },
+  { group: 'Back-End Technologies', items: ['Node.js', 'Express.js', 'FastAPI', 'Celery'] },
+  { group: 'Database', items: ['MongoDB', 'MySQL', 'PostgreSQL', 'Firebase', 'Supabase', 'Vector Database'] },
+  { group: 'LLM/GenAI', items: ['Prompt Engineering', 'RAG', 'Embeddings', 'Vector Search (Pinecone)', 'LangChain'] },
+  { group: 'Tools', items: ['GitHub (CI/CD)', 'Postman', 'Docker', 'AWS (S3, EC2, RDS, Lambda, VPC)', 'Cloudflare', 'Redis', 'WAHA'] },
+  { group: 'Problem-Solving', items: ['Solved 250+ DSA problems (LeetCode, GeeksforGeeks)'] },
 ];
 
 export const projects = [
@@ -32,6 +34,7 @@ export const projects = [
       'AI-powered web app that detects potato leaf diseases using CNN. Real-time inference with FastAPI backend.',
     tech: ['Python', 'React', 'FastAPI', 'CNN'],
     accent: 'from-emerald-400 to-teal-500',
+    link: 'https://github.com/harsh5096/Potato-disease/tree/master/potato-project',
   },
   {
     title: 'Mastermind News',
@@ -39,57 +42,60 @@ export const projects = [
       'Smart news platform with AI-powered Q&A and text-to-audio. Intelligent aggregation with conversational AI.',
     tech: ['React', 'NewsAPI', 'OpenAI'],
     accent: 'from-indigo-400 to-purple-500',
+    link: 'https://github.com/harsh5096/news-website',
   },
   {
-    title: 'React Chat App',
+    title: 'AI-Powered CRM',
     description:
-      'Real-time chat app with auth, live messaging, and a polished UI. Built with React and Firebase.',
-    tech: ['React', 'Firebase', 'Realtime'],
+      'Enterprise-grade CRM with AI lead scoring, automated WhatsApp workflows, and dynamic tool integration for sales teams.',
+    tech: ['MERN', 'OpenAI', 'Node.js', 'Express'],
     accent: 'from-pink-400 to-rose-500',
+    link: 'https://github.com/harshjoshihj4567-debug/AI_crm',
   },
   {
-    title: 'IXIGO Clone',
+    title: 'Multi-Tenant Chatbot SaaS',
     description:
-      'Fully responsive travel booking UI replicating IXIGO with flight & hotel search experiences.',
-    tech: ['React', 'HTML5', 'CSS3'],
-    accent: 'from-sky-400 to-blue-500',
-  },
-  {
-    title: 'Gmail Clone',
-    description:
-      'Email client clone with composition, threading and Firebase backend services.',
-    tech: ['React', 'Firebase', 'MUI'],
+      'A scalable SaaS platform for custom AI chatbots with vector memory (Pinecone), dynamic API tool building, and multi-tenant security.',
+    tech: ['Next.js', 'PostgreSQL', 'Redis', 'Pinecone'],
     accent: 'from-amber-400 to-orange-500',
-  },
-  {
-    title: 'ChatGPT Clone',
-    description:
-      'Conversational AI interface inspired by ChatGPT, integrated with OpenAI APIs.',
-    tech: ['React', 'Firebase', 'OpenAI'],
-    accent: 'from-violet-400 to-fuchsia-500',
+    link: 'https://github.com/harsh5096/chatbot-saas',
   },
 ];
 
 export const experience = [
   {
-    role: 'Full Stack Developer',
+    role: 'Full Stack Web Developer',
+    company: 'Morpheme Webnexus Pvt. Ltd.',
+    period: 'Sep 2025 – Present',
+    description:
+      'Implemented WhatsApp automation (WAHA), developed REST APIs with JWT & Redis caching, and managed AWS production deployments.',
+    details: [
+      'Implemented WhatsApp automation using WAHA server, handling 100+ messages/day for customer updates and follow-ups',
+      'Developed REST APIs with JWT authentication and improved performance using Redis caching + background jobs with Celery, optimized DB on Supabase (PostgreSQL)',
+      'Deployed and monitored production on AWS (EC2, RDS, Lambda) with Cloudflare, and fixed Python/API production bugs to ensure stability',
+    ],
+  },
+  {
+    role: 'Web Developer',
     company: 'Bitquark Technologies',
-    period: 'Present',
+    period: 'Feb 2025 – Sep 2025',
     description:
-      'Building production MERN applications, integrating AI features and shipping real-time experiences.',
+      'Collaborated on a departmental POS system (40% faster checkout) and built a MERN social media platform with real-time features.',
+    details: [
+      'Collaborated on a POS system used across 5+ departments; reduced checkout time by 40% via responsive UI improvements and optimized inventory sync workflows.',
+      'Contributed to a MERN-stack social media management platform with post scheduling, analytics dashboards, and team collaboration; implemented real-time features using MongoDB + MySQL, AJAX, REST APIs, JWT authentication, and Context API.',
+    ],
   },
   {
-    role: 'Master of Computer Applications (AI/ML)',
-    company: 'Uttaranchal University',
-    period: 'Graduated · 7.96 CGPA',
+    role: 'Web Development Intern',
+    company: 'AISTECHX International',
+    period: 'Dec 2022 – Mar 2023',
     description:
-      'Specialized in Artificial Intelligence and Machine Learning with research-driven coursework.',
-  },
-  {
-    role: 'DSA Practitioner',
-    company: 'LeetCode · GeeksforGeeks',
-    period: 'Ongoing',
-    description: 'Solved 250+ data structure & algorithm problems across difficulty tiers.',
+      'Built mobile-friendly React interfaces and optimized backend queries/logic for core projects.',
+    details: [
+      'Designed and built mobile-friendly web interfaces using React.js, enhancing layout adaptability and boosting user engagement across devices.',
+      'Refactored backend logic and optimized database queries in 2 core projects, improving performance and ensuring timely deliverables.',
+    ],
   },
 ];
 

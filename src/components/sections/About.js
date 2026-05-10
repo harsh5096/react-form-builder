@@ -5,9 +5,9 @@ import Section from '../ui/Section';
 import { personal } from '../../data/content';
 
 const stats = [
-  { k: 3, suffix: '+', v: 'Years coding' },
+  { k: 1.5, suffix: '+', v: 'Years coding', decimal: true },
   { k: 250, suffix: '+', v: 'DSA solved' },
-  { k: 15, suffix: '+', v: 'Projects shipped' },
+  { k: 5, suffix: '+', v: 'Projects shipped' },
   { k: 7.96, suffix: '', v: 'MCA CGPA', decimal: true },
 ];
 
@@ -33,6 +33,13 @@ function Counter({ to, decimal, suffix }) {
 }
 
 export default function About() {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  // Split bio into paragraphs
+  const paragraphs = personal.longBio.split('\n\n');
+  const firstParagraph = paragraphs[0];
+  const remainingParagraphs = paragraphs.slice(1);
+
   return (
     <Section id="about" eyebrow="About" title="A developer who cares about the details.">
       <div className="grid md:grid-cols-12 gap-10 md:gap-12 items-start">
@@ -43,16 +50,35 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="md:col-span-7 space-y-6"
         >
-          <p className="text-sm md:text-base leading-[1.8] text-[var(--text-muted)]">
-            {personal.longBio}
-          </p>
-          <a
-            href={personal.resume}
-            download
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--text)] text-[var(--bg)] text-sm font-medium hover:scale-[1.02] transition-transform shadow-card"
-          >
-            <FaDownload className="text-xs" /> Download Resume
-          </a>
+          <div className="text-sm md:text-base leading-[1.8] text-[var(--text-muted)] space-y-4">
+            <p>{firstParagraph}</p>
+            
+            <div className={`${isExpanded ? 'block' : 'hidden md:block'} space-y-4`}>
+              {remainingParagraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="md:hidden flex items-center gap-2 text-sm font-semibold text-accent"
+            >
+              {isExpanded ? 'Show Less' : 'Read More'}
+              <motion.span animate={{ rotate: isExpanded ? 180 : 0 }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </motion.span>
+            </button>
+
+            <a
+              href={personal.resume}
+              download
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--text)] text-[var(--bg)] text-sm font-medium hover:scale-[1.02] transition-transform shadow-card"
+            >
+              <FaDownload className="text-xs" /> Download Resume
+            </a>
+          </div>
         </motion.div>
 
         <div className="md:col-span-5 grid grid-cols-2 gap-4">

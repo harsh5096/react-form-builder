@@ -20,7 +20,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
-            className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 group"
+            className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-4 md:py-5 group"
           >
             <div className="md:col-span-4 flex items-center gap-3">
               <span className="text-[11px] font-mono text-accent tracking-widest">
