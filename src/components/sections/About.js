@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaDownload } from 'react-icons/fa';
 import Section from '../ui/Section';
 import { personal } from '../../data/content';
 

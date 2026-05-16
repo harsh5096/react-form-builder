@@ -37,7 +37,7 @@ export const projects = [
     link: 'https://github.com/harsh5096/Potato-disease/tree/master/potato-project',
   },
   {
-    title: 'Chatbot SaaS – Multi-Tenant AI Agent Platform',
+    title: 'Chatbot SaaS – Multi-Tenant AI Agent Platform (Ongoing)',
     description:
       'Architected a multi-tenant SaaS platform with BYO-AI support for deploying custom AI agents. Built a Pinecone-based vector memory system using hybrid retrieval with similarity and recency scoring. Developed an MCP-based Action Runner with Redis caching and async job queues.',
     tech: ['Express.js', 'PostgreSQL', 'Prisma', 'Redis', 'Pinecone'],
