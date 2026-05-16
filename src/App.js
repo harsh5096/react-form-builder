@@ -8,6 +8,7 @@ const About = lazy(() => import('./components/sections/About'));
 const Skills = lazy(() => import('./components/sections/Skills'));
 const Projects = lazy(() => import('./components/sections/Projects'));
 const Experience = lazy(() => import('./components/sections/Experience'));
+const Achievements = lazy(() => import('./components/sections/Achievements'));
 const Contact = lazy(() => import('./components/sections/Contact'));
 
 const Loader = () => (
@@ -28,6 +29,7 @@ export default function App() {
           <Skills />
           <Projects />
           <Experience />
+          <Achievements />
           <Contact />
         </Suspense>
       </main>

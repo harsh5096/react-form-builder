@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Section({ id, eyebrow, title, subtitle, children, className = '' }) {
   return (
-    <section id={id} className={`relative py-8 md:py-12 px-4 md:px-6 ${className}`}>
+    <section id={id} className={`relative py-8 md:py-12 px-4 md:px-6 scroll-mt-20 ${className}`}>
       <div className="max-w-6xl mx-auto">
         {(eyebrow || title) && (
           <motion.div

@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp, FaDownload } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import "../components/css/about.css";
 
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const downloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/images/hjHarsh-joshi.pdf';
-    link.download = 'Harsh_Joshi_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <div className="about-agency">
@@ -48,10 +39,6 @@ const About = () => {
             ) : (
               <>Read More <FaChevronDown /></>
             )}
-          </button>
-
-          <button className="about-agency-cv-btn" onClick={downloadResume}>
-            <FaDownload /> Download Resume
           </button>
         </div>
       </div>

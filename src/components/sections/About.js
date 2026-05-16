@@ -71,13 +71,6 @@ export default function About() {
               </motion.span>
             </button>
 
-            <a
-              href={personal.resume}
-              download
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--text)] text-[var(--bg)] text-sm font-medium hover:scale-[1.02] transition-transform shadow-card"
-            >
-              <FaDownload className="text-xs" /> Download Resume
-            </a>
           </div>
         </motion.div>
 
